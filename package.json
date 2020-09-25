@@ -1,0 +1,24 @@
+{
+  "name": "agilizei_bc_d1",
+  "version": "1.0.0",
+  "description": "Desafio 1 do Agilizei Bootcamp",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "npx cypress open",
+    "cy:run": "npx cypress run",
+    "report:merge": "mochawesome-merge > index.json",
+    "report:mocha": "marge index.json",
+    "report:clean": "rm -rf mochawesome-report"
+  },
+  "author": "Andre Horota",
+  "license": "ISC",
+  "devDependencies": {
+    "chance": "^1.1.7",
+    "cypress": "4.10.0",
+    "cypress-multi-reporters": "^1.4.0",
+    "mocha": "^8.1.3",
+    "mochawesome": "^6.1.1",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^5.1.0"
+  }
+}

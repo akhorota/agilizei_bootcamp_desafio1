@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-09-25T23:33:53.571Z",
+    "end": "2020-09-25T23:34:09.336Z",
+    "duration": 15724,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "7aba7281-5499-4d28-b35a-4d3b7fef3424",
+      "title": "",
+      "fullFile": "cypress\\integration\\cadastro.spec.js",
+      "file": "cypress\\integration\\cadastro.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c327e6cf-1a22-49d6-9262-b90c21250998",
+          "title": "Cadastro",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Cadastrar um novo usuário",
+              "fullTitle": "Cadastro Cadastrar um novo usuário",
+              "timedOut": null,
+              "duration": 15724,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "///- Acessar o site automation practice\ncy.visit('index.php'); ///- Clicar no botão de Sign in\ncy.get('a[class=login]').click(); ///- Preencher as informações de e-mail (não pode ser repetido)\ncy.get('input#email_create').type(chance.email()); ///- Clicar no botão Create an Account\ncy.get('button#SubmitCreate').click(); ///- Preencher as informações do formulário de cadastro\nvar gender = chance.gender();\nvar month = chance.month(); // personal info\nif (gender == 'Male') {\n  cy.get('input#id_gender1').check();\n  cy.get('input#customer_firstname').type(chance.first({\n    gender: \"male\"\n  }));\n} else {\n  cy.get('input#id_gender2').check();\n  cy.get('input#customer_firstname').type(chance.first({\n    gender: \"female\"\n  }));\n}\ncy.get('input#customer_lastname').type(chance.last());\ncy.get('input#passwd').type('12345');\nif (month == 'February') {\n  cy.get('select#days').select(chance.natural({\n    min: 1,\n    max: 28\n  }).toString());\n} else {\n  cy.get('select#days').select(chance.natural({\n    min: 1,\n    max: 31\n  }).toString());\n}\ncy.get('select#months').select(month);\ncy.get('select#years').select(chance.year({\n  min: 1900,\n  max: 2020\n})); // address\ncy.get('input#company').type(chance.company());\ncy.get('input#address1').type(chance.address());\ncy.get('input#city').type(chance.city());\ncy.get('select#id_country').select('United States');\ncy.get('select#id_state').select(chance.state({\n  country: 'us',\n  full: true\n}));\ncy.get('input#postcode').type(chance.zip());\ncy.get('input#phone_mobile').type(chance.phone({\n  formatted: false\n})); ///- Clicar no botão Register\ncy.get('button#submitAccount').click(); ///- Validar que foi redirecionado para a url correta\ncy.url().should('contain', 'my-account'); ///- Validar exibição do texto 'Welcome to your account'\ncy.get('p[class=\"info-account\"]').should('contain', 'Welcome to your account');\n;",
+              "err": {},
+              "uuid": "8203a97b-052a-4412-bce8-31f708098b82",
+              "parentUUID": "c327e6cf-1a22-49d6-9262-b90c21250998",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8203a97b-052a-4412-bce8-31f708098b82"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 15724,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "mochawesome-report",
+        "quiet": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}
