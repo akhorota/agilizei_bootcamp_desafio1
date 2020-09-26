@@ -15,4 +15,4 @@ Este desafio consiste em um projeto de automação utilizando o Cypress. O site 
   - Adicionar scripts para geração dos relatórios de teste em html;
   - Criar um repositório no GH e fazer o push do projeto;
   - Utilizar o GH Actions para executar os testes e publicar os relatórios a cada push realizado;
-  - Publicar os relatórios gerados pelo mochawesome utilizando o GH Pages;
+  - Publicar os relatórios gerados pelo mochawesome utilizando o GH Pages (https://akhorota.github.io/agilizei_bootcamp_desafio1/);
